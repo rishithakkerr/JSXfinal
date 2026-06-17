@@ -1,0 +1,30 @@
+# Node modules
+node_modules/
+
+# Vite build artifacts
+.vite/
+
+dist/
+
+# System files
+.DS_Store
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment files
+.env
+.env.*
+
+# IDE/editor directories
+.vscode/
+.idea/
+
+# Mac-specific
+.AppleDouble
+.LSOverride
+
+# Misc
+coverage/
