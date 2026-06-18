@@ -1,13 +1,3 @@
-/* ============================================================
-   src/components/digest/TextInputArea.jsx
-   Multi-Format Text Hash Calculator & Validation Desk
-   ============================================================
-   A controlled textarea bound directly to the store's rawText.
-   charCount and byteCount are read from the store as-is — they
-   are calculated elsewhere (useHashEngine) and never computed
-   in this component.
-   ============================================================ */
-
 import useHashStore from '../../store/useHashStore';
 
 export default function TextInputArea() {

@@ -1,18 +1,5 @@
-/* ============================================================
-   src/components/telemetry/TelemetryHUD.jsx
-   Multi-Format Text Hash Calculator & Validation Desk
-   ============================================================
-   Reads runtime statistics written by useHashEngine and renders
-   them in a compact dashboard. No hashing logic. No useEffect.
-   No local state. Pure display component.
-   ============================================================ */
-
 import useHashStore from '../../store/useHashStore';
 
-/* ------------------------------------------------------------
-   Helper: format the lastComputed ISO timestamp into a
-   human-readable local time string, or "Never" when null.
-   ------------------------------------------------------------ */
 function formatLastComputed(isoString) {
   if (!isoString) return 'Never';
   const date = new Date(isoString);
@@ -23,17 +10,10 @@ function formatLastComputed(isoString) {
   });
 }
 
-/* ------------------------------------------------------------
-   Helper: format large numbers with comma separators so
-   totalBits like 3456 renders as "3,456" rather than "3456".
-   ------------------------------------------------------------ */
 function formatNumber(value) {
   return value.toLocaleString();
 }
 
-/* ------------------------------------------------------------
-   Component
-   ------------------------------------------------------------ */
 export default function TelemetryHUD() {
   const charCount    = useHashStore((state) => state.charCount);
   const byteCount    = useHashStore((state) => state.byteCount);

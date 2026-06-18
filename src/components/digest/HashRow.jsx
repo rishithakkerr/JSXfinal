@@ -1,12 +1,3 @@
-/* ============================================================
-   src/components/digest/HashRow.jsx
-   Multi-Format Text Hash Calculator & Validation Desk
-   ============================================================
-   Renders a single row of the Hash Results table. Reads its own
-   hash value from the store using the algorithm's key. Contains
-   no hashing logic — it only displays whatever the store already
-   holds and offers a copy-to-clipboard action.
-   ============================================================ */
 
 import useHashStore from '../../store/useHashStore';
 
@@ -19,12 +10,10 @@ export default function HashRow({ algorithm }) {
     try {
       await navigator.clipboard.writeText(hashValue);
     } catch {
-      // Clipboard access denied or unavailable — fail silently.
     }
   }
 
   return (
-    /* data-key lets CSS target each algorithm's pill with its own pastel */
     <tr data-key={algorithm.key}>
       <td><code>{algorithm.displayName}</code></td>
       <td className="hash-length-cell">{algorithm.expectedLength}</td>

@@ -3,7 +3,6 @@
    Beautiful Notebook Edition
    ============================================================ */
 
-/* --- Reset & Box Model ------------------------------------ */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -14,64 +13,46 @@
    DESIGN TOKENS
    ============================================================ */
 :root {
-  /* ── Backgrounds ─────────────────────────────────────────── */
-  --color-bg:              #F7F5F2;   /* warm cream */
+  --color-bg:              #F7F5F2;   
   --color-surface:         #FFFFFF;
-  --color-surface-alt:     #F4F2EE;   /* cream tint for table heads etc */
+  --color-surface-alt:     #F4F2EE;  
   --color-surface-sunken:  #EDE9E3;
-
-  /* ── Borders — pulled back, let shadow carry hierarchy ───── */
   --color-border:          rgba(43, 45, 49, 0.08);
   --color-border-strong:   rgba(43, 45, 49, 0.14);
-
-  /* ── Text ────────────────────────────────────────────────── */
   --color-text-primary:    #2B2D31;
   --color-text-secondary:  #4A4C52;
   --color-text-muted:      #6B7280;
-
-  /* ── Primary accent: muted sage green ───────────────────── */
   --color-accent:          #8FAE8E;
   --color-accent-hover:    #7D9E7C;
   --color-accent-active:   #6D8E6C;
   --color-accent-subtle:   #EFF4EF;
   --color-accent-border:   #C4D9C4;
   --color-accent-text:     #4A7349;
-
-  /* ── Secondary accent: dusty lavender ───────────────────── */
   --color-lavender:        #B7AEDF;
   --color-lavender-subtle: #F0EEF9;
   --color-lavender-border: #D8D3F0;
   --color-lavender-text:   #5E548E;
-
-  /* ── Highlight accent: soft terracotta ──────────────────── */
   --color-terracotta:        #D9A273;
   --color-terracotta-subtle: #FBF2EA;
   --color-terracotta-border: #EDD0B0;
   --color-terracotta-text:   #9B5E2A;
-
-  /* ── Soft powder blue (Digest Output accent) ─────────────── */
   --color-blue:              #A8C4D4;
   --color-blue-subtle:       #EDF4F8;
   --color-blue-border:       #C4DCE8;
   --color-blue-text:         #3A6F8A;
-
-  /* ── Algorithm pill palette — warm pastels ───────────────── */
-  --algo-md5-bg:     #EEEAF8;   /* soft lavender */
+  --algo-md5-bg:     #EEEAF8;   
   --algo-md5-text:   #5E548E;
-  --algo-sha1-bg:    #E4EFF6;   /* powder blue */
+  --algo-sha1-bg:    #E4EFF6;  
   --algo-sha1-text:  #3A6F8A;
-  --algo-sha256-bg:  #E6F0E6;   /* sage mint */
+  --algo-sha256-bg:  #E6F0E6;   
   --algo-sha256-text:#4A7349;
-  --algo-sha512-bg:  #FAF0E8;   /* warm peach */
+  --algo-sha512-bg:  #FAF0E8;   
   --algo-sha512-text:#9B5E2A;
-  --algo-crc32-bg:   #F5E8ED;   /* dusty pink */
+  --algo-crc32-bg:   #F5E8ED;   
   --algo-crc32-text: #8B3A57;
-
-  /* ── Status ──────────────────────────────────────────────── */
   --color-success:         #5A8C5A;
   --color-success-bg:      #EEF4EE;
   --color-success-border:  #C0D8C0;
-
   --color-error:           #B85C5C;
   --color-error-bg:        #F9EEEE;
   --color-error-border:    #E0BFBF;
@@ -103,13 +84,13 @@
   --max-width:  1100px;
   --panel-gap:  1.125rem;
 
-  /* ── Shape — soft, rounded, notebook-like ───────────────── */
+  /* ── Shape  ──────────────────────────────────────────────── */
   --radius-sm:   8px;
   --radius-md:   14px;
   --radius-lg:   18px;
   --radius-pill: 999px;
 
-  /* ── Elevation — warm, soft shadows ─────────────────────── */
+  /* ── Shadows  ───────────────────────────────────────────── */
   --shadow-xs: 0 1px 3px rgba(43, 45, 49, 0.05);
   --shadow-sm: 0 2px 8px rgba(43, 45, 49, 0.07), 0 1px 2px rgba(43, 45, 49, 0.04);
   --shadow-md: 0 4px 16px rgba(43, 45, 49, 0.09), 0 1px 4px rgba(43, 45, 49, 0.05);
@@ -195,8 +176,6 @@ code, pre, .mono {
 
 /* ============================================================
    PANEL / CARD
-   No border by default — shadow carries the elevation.
-   A very faint border keeps it grounded on the cream bg.
    ============================================================ */
 .panel {
   background: var(--color-surface);
@@ -223,9 +202,6 @@ code, pre, .mono {
   padding: var(--space-5);
 }
 
-/* ── Panel accent left-border rules per section ─────────────
-   Applied via aria-label so no JSX changes are needed.
-   ──────────────────────────────────────────────────────────── */
 .panel[aria-label="Payload Configuration Console"] {
   border-left: 3px solid var(--color-accent);
 }
@@ -386,7 +362,6 @@ button {
   transform: scale(0.98);
 }
 
-/* Primary — sage green, soft and confident */
 .btn-primary {
   background: var(--color-accent);
   color: #ffffff;
@@ -400,7 +375,6 @@ button {
   box-shadow: 0 2px 8px rgba(143, 174, 142, 0.45);
 }
 
-/* Secondary — warm white with cream hover */
 .btn-secondary {
   background: var(--color-surface);
   color: var(--color-text-secondary);
@@ -414,7 +388,6 @@ button {
   border-color: var(--color-accent-border);
 }
 
-/* Ghost — subtle, barely there */
 .btn-ghost {
   background: transparent;
   color: var(--color-text-muted);
@@ -475,7 +448,6 @@ textarea:focus {
   box-shadow: var(--shadow-focus-lavender);
 }
 
-/* Encoding panel selects get sage focus to match their left border */
 .panel[aria-label="Encoding & Normalization Options"] select:focus {
   border-color: var(--color-accent);
   box-shadow: var(--shadow-focus-sage);
@@ -491,7 +463,6 @@ label {
   margin-bottom: var(--space-2);
 }
 
-/* ── Validation input gets a terracotta focus ──────────────── */
 #target-hash-input:focus {
   border-color: var(--color-terracotta);
   box-shadow: var(--shadow-focus-terracotta);
@@ -542,7 +513,7 @@ tbody tr:hover td {
 }
 
 /* ============================================================
-   ALGORITHM PILLS — warm pastels, one per algo
+   ALGORITHM PILLS 
    ============================================================ */
 tbody td code {
   font-family: var(--font-mono);

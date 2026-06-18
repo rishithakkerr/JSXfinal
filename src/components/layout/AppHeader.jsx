@@ -1,8 +1,3 @@
-/* ============================================================
-   src/components/layout/AppHeader.jsx
-   Multi-Format Text Hash Calculator & Validation Desk
-   ============================================================ */
-
 export default function AppHeader() {
   return (
     <header className="app-header">

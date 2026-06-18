@@ -1,13 +1,3 @@
-/* ============================================================
-   src/components/console/EncodingOptions.jsx
-   Multi-Format Text Hash Calculator & Validation Desk
-   ============================================================
-   Reads and writes encoding + normalization settings from the
-   Zustand store. No hashing logic, no telemetry, no local state.
-   The hook layer (useHashEngine) reacts to these values on its
-   own — this component only forwards user input to the store.
-   ============================================================ */
-
 import useHashStore from '../../store/useHashStore';
 
 export default function EncodingOptions() {
@@ -25,10 +15,9 @@ export default function EncodingOptions() {
       <div className="panel-header">
         <h4>Encoding &amp; Normalization</h4>
       </div>
+
       <div className="panel-body">
         <div className="options-grid">
-
-          {/* ── Encoding ────────────────────────────────────── */}
           <div className="option-group">
             <label htmlFor="encoding-select">Encoding</label>
             <select
@@ -41,7 +30,6 @@ export default function EncodingOptions() {
             </select>
           </div>
 
-          {/* ── Case Conversion ─────────────────────────────── */}
           <div className="option-group">
             <label htmlFor="case-select">Case Conversion</label>
             <select
@@ -55,7 +43,6 @@ export default function EncodingOptions() {
             </select>
           </div>
 
-          {/* ── Normalization Checkboxes ────────────────────── */}
           <div className="option-group option-group-checkboxes">
             <label>Normalization</label>
 

@@ -1,8 +1,3 @@
-/* ============================================================
-   src/components/layout/AppFooter.jsx
-   Multi-Format Text Hash Calculator & Validation Desk
-   ============================================================ */
-
 export default function AppFooter() {
   return (
     <footer className="app-footer">

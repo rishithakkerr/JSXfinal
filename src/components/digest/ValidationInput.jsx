@@ -1,12 +1,3 @@
-/* ============================================================
-   src/components/digest/ValidationInput.jsx
-   Multi-Format Text Hash Calculator & Validation Desk
-   ============================================================
-   Lets the user enter an expected hash and compare it against
-   all generated hashes. Comparison is case-insensitive.
-   No hashing logic. No useEffect. No local state.
-   ============================================================ */
-
 import useHashStore from '../../store/useHashStore';
 import ALGORITHMS from '../../utils/algorithms';
 
@@ -14,20 +5,14 @@ export default function ValidationInput() {
   const targetHash = useHashStore((state) => state.targetHash);
   const setTargetHash = useHashStore((state) => state.setTargetHash);
 
-  /* Read every generated hash from the store. */
   const md5    = useHashStore((state) => state.md5);
   const sha1   = useHashStore((state) => state.sha1);
   const sha256 = useHashStore((state) => state.sha256);
   const sha512 = useHashStore((state) => state.sha512);
   const crc32  = useHashStore((state) => state.crc32);
 
-  /* Map algorithm keys to their store values for comparison. */
   const generatedHashes = { md5, sha1, sha256, sha512, crc32 };
 
-  /* ── Comparison logic ────────────────────────────────────────
-     Case-insensitive match against every generated hash.
-     Returns the matched algorithm's displayName, or null.
-  ─────────────────────────────────────────────────────────── */
   function findMatch() {
     if (!targetHash) return null;
 
@@ -41,22 +26,16 @@ export default function ValidationInput() {
       }
     }
 
-    return false; /* explicit false = no match (vs null = empty) */
+    return false;
   }
 
   const matchResult = findMatch();
 
-  /* ── Derive status display values ───────────────────────────
-     matchResult === null  → no input yet (neutral)
-     matchResult === false → input present but no match (red)
-     matchResult === string → matched algorithm name (green)
-  ─────────────────────────────────────────────────────────── */
   let statusClass  = '';
   let statusLabel  = '';
   let statusDetail = '';
 
   if (matchResult === null) {
-    /* Empty — show nothing */
   } else if (matchResult === false) {
     statusClass  = 'validation-status validation-status--error';
     statusLabel  = 'No Match';

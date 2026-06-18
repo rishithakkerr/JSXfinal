@@ -1,8 +1,3 @@
-/* ============================================================
-   src/components/console/PayloadConsole.jsx
-   Multi-Format Text Hash Calculator & Validation Desk
-   ============================================================ */
-
 import useHashStore from '../../store/useHashStore';
 
 export default function PayloadConsole() {
@@ -16,7 +11,6 @@ export default function PayloadConsole() {
       const text = await navigator.clipboard.readText();
       setRawText(text);
     } catch {
-      // Clipboard access denied or unavailable — fail silently.
     }
   }
 
